@@ -1,0 +1,131 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f7f3ed;
+    color: #40352e;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 42px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    color: #594638;
+    margin-bottom: 12px;
+}
+
+header p {
+    color: #9b8878;
+    font-size: 15px;
+}
+
+main {
+    max-width: 950px;
+    margin: auto;
+}
+
+section {
+    background: #fffdfa;
+    padding: 30px;
+    margin-bottom: 25px;
+    border: 1px solid #e9dfd4;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(75, 55, 40, 0.05);
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: normal;
+    color: #735b49;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #806c5b;
+}
+
+select {
+    padding: 12px 15px;
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid #d8c8b8;
+    border-radius: 9px;
+    background: #faf6f0;
+    color: #594638;
+    font-size: 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 9px;
+    background: #806852;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #594638;
+    transform: translateY(-2px);
+}
+
+audio {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 15px;
+}
+
+video {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    margin-top: 20px;
+    border-radius: 12px;
+    background: #211b17;
+}
+
+#checkResult {
+    margin-top: 15px;
+    color: #806852;
+}
+
+footer {
+    text-align: center;
+    color: #a18e7d;
+    font-size: 13px;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    section {
+        padding: 20px;
+    }
+}

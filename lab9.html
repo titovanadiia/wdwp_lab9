@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Лабораторна робота №9</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f0eb;
+    color: #333;
+    padding: 25px;
+    margin: 0;
+}
+h1 {
+    text-align: center;
+    color: #754c36;
+}
+h2 {
+    margin-top: 0;
+    color: #5a3826;
+}
+section {
+    background: white;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 700px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+select, button {
+    padding: 10px 14px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+button {
+    background: #754c36;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background: #5c3a28;
+}
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+video {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+#checkResult {
+    white-space: pre-line;
+    background: #faf7f4;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 4px solid #754c36;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Моя медіабібліотека</h1>
+
+<section>
+<h2>🎵 Бібліотека аудіо</h2>
+
+<label for="audioSelect">Вибери музичний трек:</label><br>
+
+<select id="audioSelect" onchange="changeAudio()">
+    <option value="audio/song1.mp3">Музика 1</option>
+    <option value="audio/song2.mp3">Музика 2</option>
+    <option value="audio/song3.mp3">Музика 3</option>
+</select>
+
+<br>
+
+<audio id="myAudio" controls>
+    <source src="audio/song1.mp3" type="audio/mpeg">
+    Ваш браузер не підтримує аудіо.
+</audio>
+</section>
+
+<section>
+<h2>🎬 Бібліотека відео</h2>
+
+<label for="videoSelect">Вибери відеоролик:</label><br>
+
+<select id="videoSelect" onchange="changeVideo()">
+    <option value="video/video1.mp4">Відео 1</option>
+    <option value="video/video2.mp4">Відео 2</option>
+    <option value="video/video3.mp4">Відео 3</option>
+</select>
+
+<br>
+
+<video id="myVideo" controls width="600">
+    <source src="video/video1.mp4" type="video/mp4">
+    Ваш браузер не підтримує відео.
+</video>
+</section>
+
+<section>
+<h2>Перевірка підтримки відео</h2>
+
+<button onclick="checkVideo()">Перевірити браузер</button>
+
+<p id="checkResult">Результат перевірки з'явиться тут.</p>
+</section>
+
+<script>
+function changeAudio() {
+    let audio = document.getElementById("myAudio");
+    let video = document.getElementById("myVideo");
+
+    let selected = document.getElementById("audioSelect").value;
+
+    video.pause();
+    audio.src = selected;
+    audio.load();
+    audio.play();
+}
+
+function changeVideo() {
+    let audio = document.getElementById("myAudio");
+    let video = document.getElementById("myVideo");
+
+    let selected = document.getElementById("videoSelect").value;
+
+    audio.pause();
+    video.src = selected;
+    video.load();
+    video.play();
+}
+
+function checkVideo() {
+    let video = document.createElement("video");
+
+    let mp4 = video.canPlayType('video/mp4');
+    let webm = video.canPlayType('video/webm');
+    let ogg = video.canPlayType('video/ogg');
+
+    let result = "Підтримка форматів:\n";
+
+    result += "MP4: " + (mp4 || "Не підтримується") + "\n";
+    result += "WebM: " + (webm || "Не підтримується") + "\n";
+    result += "OGG: " + (ogg || "Не підтримується");
+
+    document.getElementById("checkResult").innerText = result;
+}
+</script>
+
+</body>
+</html>
